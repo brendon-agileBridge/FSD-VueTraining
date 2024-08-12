@@ -1,6 +1,9 @@
 <script setup>
 import {computed, ref, watch} from "vue";
+import {useTotalsStore} from "@/store/totals";
 import router from "@/router";
+
+const store = useTotalsStore();
 
 let props = defineProps({
   initialCount: Number
@@ -18,6 +21,9 @@ watch(count, (newVal, oldVal) => {
   
   emits('updateCount',newVal);
   router.push('/Totals');
+
+  store.incrementBy(newVal - oldVal);
+  
 });
 
 function resetCount() {

@@ -1,8 +1,15 @@
 <script setup>
-
 import {ref} from "vue";
 
-let count = ref(0);
+let props = defineProps({
+  initialCount: Number
+});
+
+let emits = defineEmits({
+  "updateCount": null
+});
+
+let count = ref(props.initialCount);
 
 </script>
 
@@ -13,7 +20,7 @@ let count = ref(0);
   <br><br><br>
   <label for="">Two way bound value</label>
   <br>
-  <input type="number" v-model="count">
+  <input type="number" v-model="count" @change="$emit('updateCount',count)">
   <br>
   <button @click="count = 0">Reset</button>
 </template>

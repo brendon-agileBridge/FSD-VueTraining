@@ -2,13 +2,17 @@
   Site Running
   <br>
   <template v-for="i in 10" :key="i">
-    <CountComponent/>
+    <CountComponent :initialCount="i" @updateCount="logChange"/>
   </template>
   
 </template>
 
 <script setup>
 import CountComponent from "@/components/CountComponent.vue";
+
+function logChange(count) {
+  alert(count);
+}
 
 </script>
 

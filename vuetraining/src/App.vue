@@ -1,15 +1,15 @@
 <template>
   Site Running
+  <br>
+  Count is: {{ count }}
+  <br>
+  Alternatively Count is: <span v-text="count"></span>
 </template>
 
-<script>
+<script setup>
+let count = 0;
 
-export default {
-  name: 'App',
-  components: {
-    
-  }
-}
+
 </script>
 
 <style>

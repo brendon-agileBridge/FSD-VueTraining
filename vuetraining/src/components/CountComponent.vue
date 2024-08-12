@@ -15,18 +15,23 @@ watch(count, (newVal, oldVal) => {
   emits('updateCount',newVal);
 });
 
+function resetCount() {
+  count.value = 0;
+}
+
+computed
+
 </script>
 
 <template>
+  <br><br><br>
   Count is: {{ count }}
   <br>
-  Alternatively Count is: <span v-text="count"></span>
-  <br><br><br>
   <label for="">Two way bound value</label>
   <br>
   <input type="number" v-model="count">
   <br>
-  <button @click="count = 0">Reset</button>
+  <button @click="() => resetCount()">Reset</button>
 </template>
 
 <style scoped>

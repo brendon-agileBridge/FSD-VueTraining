@@ -11,7 +11,7 @@
 import CountComponent from "@/components/CountComponent.vue";
 
 function logChange(count) {
-  alert(count);
+  console.log(count);
 }
 
 </script>

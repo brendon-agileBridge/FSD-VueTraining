@@ -20,11 +20,10 @@ watch(count, (newVal, oldVal) => {
     return;
   
   emits('updateCount',newVal);
-  router.push('/Totals');
 
-  store.incrementBy(newVal - oldVal);
+  store.incrementBy(newVal - (oldVal??0));
   
-});
+}, {immediate: true});
 
 function resetCount() {
   count.value = 0;
@@ -57,6 +56,8 @@ const letter = computed(() => {
   <input type="number" v-model="count">
   <br>
   <button @click="() => resetCount()">Reset</button>
+
+  {{store.totalCount}}
 </template>
 
 <style scoped>

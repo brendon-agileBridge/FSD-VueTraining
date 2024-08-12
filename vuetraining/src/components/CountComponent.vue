@@ -19,7 +19,6 @@ function resetCount() {
   count.value = 0;
 }
 
-computed
 
 </script>
 

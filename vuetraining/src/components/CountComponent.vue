@@ -1,5 +1,6 @@
 <script setup>
 import {computed, ref, watch} from "vue";
+import router from "@/router";
 
 let props = defineProps({
   initialCount: Number
@@ -12,7 +13,11 @@ let emits = defineEmits({
 let count = ref(props.initialCount);
 
 watch(count, (newVal, oldVal) => {
+  if(oldVal === newVal)
+    return;
+  
   emits('updateCount',newVal);
+  router.push('/Totals');
 });
 
 function resetCount() {

@@ -1,5 +1,11 @@
 <template>
   Site Running
+  <nav>
+    <router-link to="/">Home</router-link> |
+    <router-link to="/Totals">Totals</router-link>
+  </nav>
+  
+  
   <br>
   <router-view/>
   

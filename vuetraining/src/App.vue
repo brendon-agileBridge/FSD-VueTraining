@@ -8,6 +8,8 @@
   <label for="">Two way bound value</label>
   <br>
   <input type="number" v-model="count">
+  <br>
+  <button @click="count = 0">Reset</button>
 </template>
 
 <script setup>
